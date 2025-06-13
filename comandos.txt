@@ -1,0 +1,5 @@
+## antes de realizar deploy hay que correr este comandop para ajustar los static
+python manage.py collectstatic --noinput
+
+## posterior correr server
+python manage.py runserver 127.0.0.1:3000
