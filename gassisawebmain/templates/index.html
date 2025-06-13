@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GASSISA GRUPO APOLO</title>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <h1 class="title">GASSISA GRUPO APOLO</h1>
+    <div class="icons">
+      <span class="icon">⚙️</span>
+      <span class="icon">👤</span>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Nosotros</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+  
+  <main class="content">
+    <div class="mascota-container">
+      <img src="{% static 'img/mascota.png' %}" alt="Mascota GASSISA" class="mascota" />
+      <div class="chat-bubble" id="chatBubble">
+        <p id="chatText">¡Hola! Bienvenido a GASSISA Grupo Apolo 👋</p>
+        <div class="chat-options" id="chatOptions" style="display: none;">
+          <button onclick="selectOption('productos')">🛒 Ver productos</button>
+          <button onclick="selectOption('servicios')">🔧 Servicios</button>
+          <button onclick="selectOption('contacto')">📞 Contactar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const isOpen = menu.classList.contains('open');
+
+    if (isOpen) {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    } else {
+      menu.classList.add('open');
+      overlay.classList.add('show');
+    }
+  }
+
+  function closeMenu() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+  }
+
+  window.onload = function () {
+    const chatBubble = document.getElementById('chatBubble');
+    const chatText = document.getElementById('chatText');
+    const chatOptions = document.getElementById('chatOptions');
+
+    setTimeout(() => {
+      chatText.textContent = '¿Qué te gustaría hacer hoy?';
+      chatOptions.style.display = 'flex';
+    }, 6000);
+  };
+
+  function selectOption(option) {
+    const chatText = document.getElementById('chatText');
+    const chatOptions = document.getElementById('chatOptions');
+    chatOptions.style.display = 'none';
+
+    if (option === 'productos') {
+      chatText.textContent = '¡Genial! Redirigiéndote a productos... 🛒';
+    } else if (option === 'servicios') {
+      chatText.textContent = 'Perfecto, estos son nuestros servicios 🔧';
+    } else if (option === 'contacto') {
+      chatText.textContent = 'Aquí tienes nuestras formas de contacto 📞';
+    }
+
+    // Aquí podrías hacer redirección o mostrar secciones específicas
+  }
+
+</script>
+</body>
+</html>
+
