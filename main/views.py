@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+# Vistas de aplicación main index
+def IndexView(request):
+    return render(request, "index.html")
