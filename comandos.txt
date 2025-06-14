@@ -7,6 +7,11 @@ venv\Scripts\activate
 ##Actualizar proyecto
 pip install --upgrade pip
 pip install django whitenoise
+pip install gunicorn
+
+
+##Reinstalaciones
+pip uninstall gunicorn
 
 #Obtener requerimientos 
 pip freeze > requirements.txt
