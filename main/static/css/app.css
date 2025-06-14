@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  background-image: url('../img/hexagonal-bg.webp');
+  background-image: url('../img/hexagonal-bg.webp'); 
   background-repeat: no-repeat;
   background-size: cover; /* o prueba cover si prefieres llenar toda la pantalla */
   background-position: center center;
