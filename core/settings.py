@@ -16,8 +16,8 @@ ALLOWED_HOSTS = ['*']
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'main', 'static'),
-    BASE_DIR / "main" / "static",
+    os.path.join(BASE_DIR, 'core', 'static'),
+    BASE_DIR / "core" / "static",
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -30,8 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #Main proyect
-    'main',
+    #Core proyect
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "main/templates", BASE_DIR / "main/static"],  
+        'DIRS': [BASE_DIR / "core/templates", BASE_DIR / "core/static"],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

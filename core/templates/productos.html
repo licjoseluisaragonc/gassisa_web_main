@@ -33,11 +33,11 @@
   
   <main class="content">
     <div class="mascota-container">
-      <img src="{% static 'img/mascota.png' %}" alt="Mascota GASSISA" class="mascota" />
+      <img src="{% static 'img/mascota.png' %}" alt="Robyn Mascota GASSISA" class="mascota" />
       <div class="chat-bubble" id="chatBubble">
-        <p id="chatText">¡Hola! Bienvenido a GASSISA Grupo Apolo 👋</p>
+        <p id="chatText">¡Excelente! estas ahora en nuestros catálogos</p>
         <div class="chat-options" id="chatOptions" style="display: none;">
-          <button onclick="selectOption('productos')">🛒 Ver productos</button>
+          <button onclick="selectOption('')">Inicio 🏡</button>
           <button onclick="selectOption('servicios')">🔧 Servicios</button>
           <button onclick="selectOption('contacto')">📞 Contactar</button>
         </div>
@@ -65,26 +65,28 @@
     document.getElementById('overlay').classList.remove('show');
   }
 
-  window.onload = function () {
-    const chatBubble = document.getElementById('chatBubble');
+  document.addEventListener("DOMContentLoaded", function () {
+    iniciarChat();
+  });
+
+  function iniciarChat() {
     const chatText = document.getElementById('chatText');
     const chatOptions = document.getElementById('chatOptions');
 
     setTimeout(() => {
-      chatText.textContent = '¿Qué te gustaría hacer hoy?';
+      chatText.textContent = '¿Qué te gustaría hacer ahora?';
       chatOptions.style.display = 'flex';
     }, 6000);
-  };
+  }
 
   function selectOption(option) {
     const chatText = document.getElementById('chatText');
     const chatOptions = document.getElementById('chatOptions');
     chatOptions.style.display = 'none';
-
-    if (option === 'productos') {
-      chatText.textContent = '¡Genial! Redirigiéndote a productos... 🛒';
+    if (option === '') {
+      chatText.textContent = '¡Procediendo a regresar al inicio! 🏡';
       setTimeout(() => {
-        window.location.href = 'productos.html'; // <-- Redirección
+        window.location.href = '../'; // <-- Redirección
       }, 1000); // Espera 1 segundo para mostrar el mensaje antes de redirigir
     } else if (option === 'servicios') {
       chatText.textContent = 'De acuerdo, estos son nuestros servicios 🔧';
