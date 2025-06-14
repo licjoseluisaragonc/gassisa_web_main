@@ -4,7 +4,5 @@ python manage.py collectstatic --noinput
 ## posterior correr server
 python manage.py runserver 127.0.0.1:3000
 
-
 #migraciones
-
-python manage.py migrate 
+python manage.py migrate

@@ -16,3 +16,6 @@ def list_staticfiles(request):
             filepath = os.path.relpath(os.path.join(root, filename), static_dir)
             files.append(filepath)
     return JsonResponse({'static_files': files})
+
+def productos(request):
+    return render(request, 'productos.html')
