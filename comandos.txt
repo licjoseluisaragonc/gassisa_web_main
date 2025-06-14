@@ -1,3 +1,19 @@
+##Creación de entorno virtual
+python -m venv venv
+
+##Activar el entorno virtual
+venv\Scripts\activate
+
+##Actualizar proyecto
+pip install --upgrade pip
+pip install django whitenoise
+
+#Obtener requerimientos 
+pip freeze > requirements.txt
+
+#migraciones
+python manage.py migrate
+
 ## antes de realizar deploy hay que correr este comandop para ajustar los static
 python manage.py collectstatic --noinput
 
@@ -6,3 +22,4 @@ python manage.py runserver 127.0.0.1:3000
 
 #migraciones
 python manage.py migrate
+
